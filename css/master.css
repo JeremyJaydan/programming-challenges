@@ -1,0 +1,236 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap');
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: Rubik;
+  --green: #3EBF43;
+  --yellow: #FDBF5C;
+  --red: #CF4D4D;
+  --purple: #A759CC;
+  overflow: hidden;
+}
+
+.top{
+  width: calc(100% - 64px);
+  z-index: 100;
+}
+
+.socials__link{
+  margin: auto 0;
+  text-decoration: none;
+}
+.socials__img{
+  width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  opacity: .5;
+}
+.socials__img--github:hover, .socials__img--github:hover > path{ fill: #000000; opacity: 1; }
+.socials__img--discord:hover, .socials__img--discord:hover > path{ fill: #7289DA; opacity: 1; }
+.socials__img--twitter:hover, .socials__img--twitter:hover > path{ fill: #1DA1F2; opacity: 1; }
+
+.color--green{ color: var(--green); }
+.color--yellow{ color: var(--yellow); }
+.color--red{ color: var(--red); }
+.color--purple{ color: var(--purple); }
+.border--green{ border-color: var(--green) !important; }
+.border--yellow{ border-color: var(--yellow) !important; }
+.border--red{ border-color: var(--red) !important; }
+.border--purple{ border-color: var(--purple) !important; }
+
+.link{
+  color: #23549F;
+  text-decoration: none;
+}
+.link:hover{
+  text-decoration: underline;
+}
+
+.flex{
+  display: flex;
+}
+.flex--column{ flex-direction: column; }
+.flex--inline{ display: inline-flex; }
+.flex--grow{ flex-grow: 1; }
+.flex--wrap{ flex-wrap: wrap; };
+.flex__section{
+  display: flex;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.fixed{ position: fixed; }
+
+.span{
+  font-weight: normal;
+}
+.span--small{
+  font-size: 14px;
+  color: #4B4B4B;
+}
+.span--big{
+  font-weight: bold;
+  font-size: 32px;
+}
+.span--large{
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.border{
+  border: 2px solid #C2C2C2;
+}
+.border--radius{
+  border-radius: .25rem;
+}
+
+.strict--left, .strict--right{
+  margin: auto 0;
+  padding: 0 8px;
+}
+.strict--right{
+  text-align: right;
+  display: inline-block;
+  width: 42px;
+}
+.strict--left{
+  line-height: 50px;
+  vertical-align: top;
+}
+.strict--center{
+  width: 50px;
+  text-align: center;
+}
+.strict--full-height{ height: 100%; }
+.strict--full-width{ width: 100%; }
+
+.btn{
+  user-select: none;
+  cursor: pointer;
+}
+.btn--primary{
+  color: #fff;
+  background: #23549F;
+  border: 2px solid #5A8CD7;
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.btn--primary:hover{
+  background: #5A8CD7;
+}
+.btn--right{
+  margin-left: auto;
+}
+
+.hover--area:hover{ background: rgba(0, 0, 0, .05); }
+.margin--auto{ margin: auto; }
+.margin--autopx{ margin: auto 16px; }
+.margin--auto0{ margin: auto 0; }
+.margin--pxauto{ margin: 16px auto; }
+.margin--leftpx{ margin-left: auto; transform: translateX(-16px); }
+.padding--pxpx{ padding: 16px 32px }
+
+.checkbox{
+  width: 0;
+  height: 0;
+}
+.checkbox:not(:checked) ~ span{
+  color: gray;
+  opacity: .5;
+}
+
+.spinner{
+  padding: 0 32px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateY(5%);
+}
+.spinner__card{
+  max-width: 512px;
+  border-radius: .5rem;
+  transition: cubic-bezier(.1,.95,.4,.93) 800ms;
+  transform: scale(0);
+  height: 0;
+  font-size: 0;
+  padding: 0;
+  display: none;
+  overflow-y: auto;
+}
+
+.spinner__card:nth-child(1){
+  display: block;
+}
+.spinner__card:nth-child(2),
+.spinner__card:nth-child(3),
+.spinner__card:nth-child(4),
+.spinner__card:nth-child(5),
+.spinner__card:nth-child(6){
+  padding: 8px 32px;
+  font-size: 18px;
+  height: 11%;
+  display: flex;
+  border: 2px solid;
+}
+.spinner__card:nth-child(2), .spinner__card:nth-child(6){
+  transform: scale(.7);
+  opacity: .5;
+}
+.spinner__card:nth-child(4){
+  transform: scale(1);
+  opacity: 1;
+  border: 3px solid;
+}
+.spinner__card:nth-child(3), .spinner__card:nth-child(5){
+  transform: scale(.8);
+  opacity: .7;
+}
+.spinner__card:nth-child(7){
+  display: flex;
+}
+
+.diff{
+  display: inline-flex;
+  flex-wrap: wrap;
+  background: #fff;
+}
+
+@media (max-width: 600px){
+  .spinner{
+    padding: 0;
+    margin: 0;
+  }
+  .diff{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .margin--pxauto{ margin: 8px auto; }
+  .padding--pxpx{ padding: 8px 16px; }
+  .spinner{
+    z-index: -1;
+    transform: translateY(128px);
+  }
+  .spinner__card{ font-size: 14px !important; }
+  .top{
+    border: 2px solid #C2C2C2;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    flex-flow: column wrap;
+  }
+  .socials{
+    padding-top: 16px;
+    padding-right: 16px;
+  }
+}
