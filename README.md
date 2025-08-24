@@ -2,7 +2,7 @@
 
 This project is based on the below image from pro/g/ramming.
 
-![](https://jcdn.io/programming-challenges-v4.0.png)
+![](./media/programming-challenges-v4.0.png)
 
 # Want to submit a challenge? Make a PR or an Issue!
 
